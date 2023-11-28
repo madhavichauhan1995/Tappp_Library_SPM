@@ -331,8 +331,9 @@ public class WebkitClass1: BaseClass {
                     .deletingLastPathComponent() // TapppPanelLibrary
                 print("PackageURl from currentFileUrl: ",packageURL)
                 print()
-                let indexPath = packageURL.appendingPathComponent("Tappp_Library/Sources/Tappp_Library/dist/index.html")
-                print("PackageURL: ",packageURL.appendingPathComponent("Tappp_Library/Sources/Tappp_Library/dist/index.html"))
+//                Tappp_Library_SPM/Sources/Tappp_Library/dist
+                let indexPath = packageURL.appendingPathComponent("Tappp_Library_SPM/Sources/Tappp_Library/dist/index.html")
+                print("PackageURL: ",packageURL.appendingPathComponent("Tappp_Library_SPM/Sources/Tappp_Library/dist/index.html"))
                 print()
                 print("indexPath: ",indexPath)
                 self.webView.loadFileURL(indexPath, allowingReadAccessTo: indexPath.deletingLastPathComponent())
