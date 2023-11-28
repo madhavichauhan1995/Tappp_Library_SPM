@@ -311,15 +311,17 @@ public class WebkitClass1: BaseClass {
 
                 
 //                FIRST Attempt
-                let customBundle = Bundle(for: WebkitClass1.self)
-                print("Custombundle: ",customBundle)
-                guard let resourceURL = customBundle.resourceURL?.appendingPathComponent("dist.bundle") else { return }
-                print("Resource URL: ",resourceURL)
-                guard let resourceBundle = Bundle(url: resourceURL) else { return }
-                print("resourceBundle: ",resourceBundle)
-                guard let jsFileURL = resourceBundle.url(forResource: "index", withExtension: "html") else { return }
-                print("jsFileURL: ",jsFileURL)
-                self.webView.loadFileURL(jsFileURL, allowingReadAccessTo: jsFileURL.deletingLastPathComponent())
+//                let customBundle = Bundle(for: WebkitClass1.self)
+//                print("Custombundle: ",customBundle)
+//                guard let resourceURL = customBundle.resourceURL?.appendingPathComponent("dist.bundle") else { return }
+//                print("Resource URL: ",resourceURL)
+//                guard let resourceBundle = Bundle(url: resourceURL) else { return }
+//                print("resourceBundle: ",resourceBundle)
+//                guard let jsFileURL = resourceBundle.url(forResource: "index", withExtension: "html") else { return }
+//                print("jsFileURL: ",jsFileURL)
+//                self.webView.loadFileURL(jsFileURL, allowingReadAccessTo: jsFileURL.deletingLastPathComponent())
+                
+//                Hii
                 
 //                Hii
                 
@@ -350,17 +352,17 @@ public class WebkitClass1: BaseClass {
 //                }
                 
 //                Third Attepmt
-//                if let indexHTMLPath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Tappp_Library/dist") {
-//                    // Load the HTML content or perform necessary operations with the index.html file path
-//                    do {
-//                        let htmlContent = try String(contentsOfFile: indexHTMLPath)
-//                        print(htmlContent) // Print the HTML content
-//                    } catch {
-//                        print("Error reading HTML file:", error.localizedDescription)
-//                    }
-//                } else {
-//                    print("index.html file not found")
-//                }
+                if let indexHTMLPath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Tappp_Library/dist") {
+                    // Load the HTML content or perform necessary operations with the index.html file path
+                    do {
+                        let htmlContent = try String(contentsOfFile: indexHTMLPath)
+                        print(htmlContent) // Print the HTML content
+                    } catch {
+                        print("Error reading HTML file:", error.localizedDescription)
+                    }
+                } else {
+                    print("index.html file not found")
+                }
 
 
                 
