@@ -378,7 +378,7 @@ public class WebkitClass1: BaseClass {
                 } else {
                     print("index.html file not found")
                 }
-
+//hii
 
                 
                 
@@ -388,7 +388,7 @@ public class WebkitClass1: BaseClass {
                 // self.webView.configuration.userContentController.add(self, name: self.mNativeToWebHandler)
             }
         }
-    }
+    
 
     public func loadDataJS(objPanelData: [String: Any]) {
         print("inside load data js")
