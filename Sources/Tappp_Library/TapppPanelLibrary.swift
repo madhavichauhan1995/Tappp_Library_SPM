@@ -352,13 +352,28 @@ public class WebkitClass1: BaseClass {
 //                }
                 
 //                Third Attepmt
-                if let indexHTMLPath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Tappp_Library/dist") {
-                    // Load the HTML content or perform necessary operations with the index.html file path
-                    do {
-                        let htmlContent = try String(contentsOfFile: indexHTMLPath)
-                        print(htmlContent) // Print the HTML content
-                    } catch {
-                        print("Error reading HTML file:", error.localizedDescription)
+//                if let indexHTMLPath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Tappp_Library/dist") {
+//                    // Load the HTML content or perform necessary operations with the index.html file path
+//                    do {
+//                        let htmlContent = try String(contentsOfFile: indexHTMLPath)
+//                        print(htmlContent) // Print the HTML content
+//                    } catch {
+//                        print("Error reading HTML file:", error.localizedDescription)
+//                    }
+//                } else {
+//                    print("index.html file not found")
+//                }
+                
+//                Forth Attempt
+                // Assuming 'index.html' is in the 'dist' folder within the package
+                let myBundle = Bundle(for: WebkitClass1.self)
+                print("MyBundle: ",myBundle)
+                    if let indexPath = myBundle.url(forResource: "index", withExtension: "html", subdirectory: "dist") {
+                        // Loading 'index.html' file using WKWebView
+                        print("Index Path: ",indexPath)
+                        self.webView.loadFileURL(indexPath, allowingReadAccessTo: indexPath.deletingLastPathComponent())
+                    } else {
+                        print("index.html file not found")
                     }
                 } else {
                     print("index.html file not found")
