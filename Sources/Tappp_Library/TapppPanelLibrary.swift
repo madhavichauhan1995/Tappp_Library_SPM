@@ -321,6 +321,8 @@ public class WebkitClass1: BaseClass {
                 print("jsFileURL: ",jsFileURL)
                 self.webView.loadFileURL(jsFileURL, allowingReadAccessTo: jsFileURL.deletingLastPathComponent())
                 
+//                Hii
+                
 //                Second Attempt
                 // Constructing the file path to the 'index.html' file within the Swift package's structure
 //                let currentFileURL = URL(fileURLWithPath: #file)
