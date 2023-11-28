@@ -309,8 +309,6 @@ public class WebkitClass1: BaseClass {
                 self.webView.backgroundColor = UIColor.clear
                 self.webView.isOpaque = false
 
-                
-//                FIRST Attempt
 //                let customBundle = Bundle(for: WebkitClass1.self)
 //                print("Custombundle: ",customBundle)
 //                guard let resourceURL = customBundle.resourceURL?.appendingPathComponent("dist.bundle") else { return }
@@ -321,65 +319,39 @@ public class WebkitClass1: BaseClass {
 //                print("jsFileURL: ",jsFileURL)
 //                self.webView.loadFileURL(jsFileURL, allowingReadAccessTo: jsFileURL.deletingLastPathComponent())
                 
-//                Hii
                 
-//                Hii
-                
-//                Second Attempt
                 // Constructing the file path to the 'index.html' file within the Swift package's structure
-//                let currentFileURL = URL(fileURLWithPath: #file)
-//                print("currentFileUrl: ",currentFileURL)
-//                let packageURL = currentFileURL
-//                    .deletingLastPathComponent() // TapppPanelLibrary/Sources/TapppPanelLibrary/dist
-//                    .deletingLastPathComponent() // TapppPanelLibrary/Sources/TapppPanelLibrary
-//                    .deletingLastPathComponent() // TapppPanelLibrary/Sources
-//                    .deletingLastPathComponent() // TapppPanelLibrary
-//                let indexPath = packageURL.appendingPathComponent("Tappp_Library/Sources/Tappp_Library/dist/index.html")
-//                print("indexPath: ",indexPath)
-//                self.webView.loadFileURL(indexPath, allowingReadAccessTo: indexPath.deletingLastPathComponent())
+                let currentFileURL = URL(fileURLWithPath: #file)
+                print("currentFileUrl: ",currentFileURL)
+                print()
+                let packageURL = currentFileURL
+                    .deletingLastPathComponent() // TapppPanelLibrary/Sources/TapppPanelLibrary/dist
+                    .deletingLastPathComponent() // TapppPanelLibrary/Sources/TapppPanelLibrary
+                    .deletingLastPathComponent() // TapppPanelLibrary/Sources
+                    .deletingLastPathComponent() // TapppPanelLibrary
+                print("PackageURl from currentFileUrl: ",packageURL)
+                print()
+//                Tappp_Library_SPM/Sources/Tappp_Library/dist
+                let indexPath = packageURL.appendingPathComponent("Tappp_Library_SPM/Sources/Tappp_Library/dist/index.html")
+                print("PackageURL: ",packageURL.appendingPathComponent("Tappp_Library_SPM/Sources/Tappp_Library/dist/index.html"))
+                print()
+                print("indexPath: ",indexPath)
+                self.webView.loadFileURL(indexPath, allowingReadAccessTo: indexPath.deletingLastPathComponent())
                 
+                
+
                 // Checking if the 'index.html' file exists at the specified path
-//                if FileManager.default.fileExists(atPath: indexPath.path) {
-//                    do {
-//                        let htmlContent = try String(contentsOf: indexPath)
-//                        // Perform operations with the HTML content
-//                        print(htmlContent)
-//                    } catch {
-//                        print("Error reading index.html:", error.localizedDescription)
-//                    }
-//                } else {
-//                    print("index.html file not found")
-//                }
-                
-//                Third Attepmt
-//                if let indexHTMLPath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "Tappp_Library/dist") {
-//                    // Load the HTML content or perform necessary operations with the index.html file path
-//                    do {
-//                        let htmlContent = try String(contentsOfFile: indexHTMLPath)
-//                        print(htmlContent) // Print the HTML content
-//                    } catch {
-//                        print("Error reading HTML file:", error.localizedDescription)
-//                    }
-//                } else {
-//                    print("index.html file not found")
-//                }
-                
-//                Forth Attempt
-                // Assuming 'index.html' is in the 'dist' folder within the package
-                let myBundle = Bundle(for: WebkitClass1.self)
-                print("MyBundle: ",myBundle)
-                    if let indexPath = myBundle.url(forResource: "index", withExtension: "html", subdirectory: "dist") {
-                        // Loading 'index.html' file using WKWebView
-                        print("Index Path: ",indexPath)
-                        self.webView.loadFileURL(indexPath, allowingReadAccessTo: indexPath.deletingLastPathComponent())
-                    } else {
-                        print("index.html file not found")
+                if FileManager.default.fileExists(atPath: indexPath.path) {
+                    do {
+                        let htmlContent = try String(contentsOf: indexPath)
+                        // Perform operations with the HTML content
+                        print(htmlContent)
+                    } catch {
+                        print("Error reading index.html:", error.localizedDescription)
                     }
                 } else {
                     print("index.html file not found")
                 }
-//hii
-//hiii 1
 
                 
                 
@@ -389,7 +361,7 @@ public class WebkitClass1: BaseClass {
                 // self.webView.configuration.userContentController.add(self, name: self.mNativeToWebHandler)
             }
         }
-    
+    }
 
     public func loadDataJS(objPanelData: [String: Any]) {
         print("inside load data js")
